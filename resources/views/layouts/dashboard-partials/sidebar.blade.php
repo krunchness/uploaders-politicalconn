@@ -17,6 +17,28 @@
                     <a href="{{ url('dashboard/files') }}">
                         <i class="fas fa-table"></i>File Lists</a>
                 </li>
+
+                @if(auth()->user()->hasRole->role == 'Admin')
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-users"></i>User Management
+                            <span class="arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="{{ route('usermanagement.usersList') }}">All Users</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('usermanagement.rolesList') }}">Manage Roles</a>
+                            </li>
+                           <!--  <li>
+                                <a href="forget-pass.html">Forget Password</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                @endif
                 <!-- <li>
                     <a href="#">
                         <i class="fas fa-calendar-alt"></i>Calendar</a>
@@ -24,25 +46,6 @@
                 <li>
                     <a href="map.html">
                         <i class="fas fa-map-marker-alt"></i>Maps</a>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Pages
-                        <span class="arrow">
-                            <i class="fas fa-angle-down"></i>
-                        </span>
-                    </a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="login.html">Login</a>
-                        </li>
-                        <li>
-                            <a href="register.html">Register</a>
-                        </li>
-                        <li>
-                            <a href="forget-pass.html">Forget Password</a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
