@@ -23,4 +23,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'DashboardController@index');
     Route::get('/files', 'DashboardController@showFilesTable')->name('file.list');
     Route::post('/files', 'DashboardController@uploadFile')->name('file.upload');
+
+    Route::get('/user-management', 'UserController@usersList')->name('usermanagement.usersList');
+    Route::get('/role-management', 'UserController@rolesList')->name('usermanagement.rolesList');
 });
