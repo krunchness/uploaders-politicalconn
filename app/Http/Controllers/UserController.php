@@ -10,8 +10,9 @@ class UserController extends Controller
     public function usersList()
     {
     	$users = User::all();
+        $roles = UserRole::all();
 
-    	return view('dashboard.dashboard-usermanagement', compact(['users']));
+    	return view('dashboard.dashboard-usermanagement', compact(['users', 'roles']));
     }
 
     public function rolesList()
@@ -19,5 +20,27 @@ class UserController extends Controller
     	$roles = UserRole::all();
 
     	return view('dashboard.dashboard-rolesmanagement', compact(['roles']));
+    }
+
+    public function addUser(Request $request)
+    {
+       // dd($request->all());
+
+       User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'user_role' => $request->user_role,
+       ]);
+
+       return redirect()->route('usermanagement.usersList');
+    }
+
+    public function addRole(Request $request)
+    {
+
+        UserRole::create($request->all());
+
+        return redirect()->route('usermanagement.rolesList');
     }
 }
