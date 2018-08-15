@@ -73,7 +73,7 @@
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item download-file" data-file="	" data-toggle="tooltip" data-placement="top" title="Download">
+                                <!-- <button class="item download-file" data-file="	" data-toggle="tooltip" data-placement="top" title="Download">
                                     <i class="zmdi zmdi-cloud-download"></i>
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -84,7 +84,7 @@
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                     <i class="zmdi zmdi-more"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </td>
                     </tr>

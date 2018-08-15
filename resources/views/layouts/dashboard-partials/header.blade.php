@@ -6,7 +6,7 @@
                     <div class="noti-wrap">
                         <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-notifications"></i>
-                            <span class="quantity">3</span>
+                            <!-- <span class="quantity">3</span> -->
                             <!-- <div class="notifi-dropdown js-dropdown">
                                 <div class="notifi__title">
                                     <p>You have 3 Notifications</p>

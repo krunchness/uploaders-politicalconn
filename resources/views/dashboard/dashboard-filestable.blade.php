@@ -84,7 +84,7 @@
                                 <button class="item download-file" data-file="{{ $file->filename }}" data-toggle="tooltip" data-placement="top" title="Download">
                                     <i class="zmdi zmdi-cloud-download"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <!-- <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
@@ -92,7 +92,7 @@
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                     <i class="zmdi zmdi-more"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </td>
                     </tr>
