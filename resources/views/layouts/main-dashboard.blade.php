@@ -79,6 +79,8 @@
                 </div>
             </div>
             <!-- END MAIN CONTENT-->
+
+            @yield('modal')
             <!-- END PAGE CONTAINER-->
         </div>
 
@@ -90,7 +92,7 @@
     <script src="{{ asset( 'vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ asset( 'vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
     <!-- Vendor JS -->
-    @yield('custom-script');
+    @yield('custom-script')
     <script src="{{ asset( 'vendor/datatables/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset( 'vendor/slick/slick.min.js') }}"></script>
     <script src="{{ asset( 'vendor/wow/wow.min.js') }}"></script>

@@ -7,6 +7,7 @@ use App\FileInfo;
 
 class DashboardController extends Controller
 {
+
     public function index()
     {
     	return view('dashboard.dashboard-index');
@@ -42,7 +43,7 @@ class DashboardController extends Controller
     		FileInfo::create([
     			'title' => $request->title,
     			'filename' => $filename,
-    			'uploaded_by' => auth()->user()->name,
+    			'uploaded_by' => auth()->user()->username,
     			'file_format' => $file_extension,
     			'file_desc' => $request->file_desc
     		]);
@@ -50,5 +51,63 @@ class DashboardController extends Controller
     		return redirect()->route('file.list');
 
     	}
+    }
+
+    public function updateFile(Request $request, FileInfo $file)
+    {   
+
+        // dd($request->file_input);
+
+        $file_data = $request->file_input;
+
+        if ($file_data) {
+
+            if ($_ENV['APP_ENV'] == 'production') {
+                unlink($_SERVER['DOCUMENT_ROOT'] . '/images/' . $file->filename);
+            }else{
+                unlink(public_path("files\\" . $file->filename));
+            }
+
+            $filename = $file_data->getClientOriginalName();
+            $file_extension = pathinfo($file_data->getClientOriginalName(), PATHINFO_EXTENSION);
+            $file_data->move('files', $filename);
+
+            $file->update([
+                'title' => $request->title,
+                'filename' => $filename,
+                'uploaded_by' => auth()->user()->username,
+                'file_format' => $file_extension,
+                'file_desc' => $request->file_desc
+            ]);
+
+            return back();
+
+        }else{
+            $file->update([
+                'title' => $request->title,
+                'file_desc' => $request->file_desc
+            ]);
+
+            return back();
+        }
+        
+
+        
+    }
+
+    public function deleteFile($id)
+    {
+        $file = FileInfo::findorFail($id);
+
+        if ($_ENV['APP_ENV'] == 'production') {
+            unlink($_SERVER['DOCUMENT_ROOT'] . '/images/' . $file->filename);
+        }else{
+            unlink(public_path("files\\" . $file->filename));
+        }
+        
+        // $airline->airlineCarryOns()->delete(); Find on the other table that have the same ID
+        $file->delete();
+
+        return back();
     }
 }

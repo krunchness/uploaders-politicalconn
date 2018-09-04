@@ -53,7 +53,8 @@
                             </label>
                         </th>
                         <th>ID</th>
-                        <th width="25%">Name</th>
+                        <th>Name</th>
+                        <th>Username</th>
                         <th>Email</th>
                         <th>User Role</th>
                         <th></th>
@@ -73,6 +74,7 @@
                         <td>
                             <span class="block-email">{{ $user->name }}</span>
                         </td>
+                        <td>{{ $user->username }}</td>
                         <td class="desc">{{ $user->email }}</td>
                         <td>{{ $user->hasRole->role }}</td>
                         <td>
@@ -117,6 +119,14 @@
                         </div>
                         <div class="col-12 col-md-9">
                             <input type="text" id="text-input" name="name" placeholder="Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Username</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control">
                         </div>
                     </div>
                     <div class="row form-group">

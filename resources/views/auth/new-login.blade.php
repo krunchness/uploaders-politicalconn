@@ -48,8 +48,8 @@
                             <form action="{{ route('login') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                                    <label>Username</label>
+                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username" value="{{ old('username') }}" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

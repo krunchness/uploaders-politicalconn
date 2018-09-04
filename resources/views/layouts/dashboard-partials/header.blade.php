@@ -74,7 +74,7 @@
                                     <!-- <div class="account-dropdown__item">
                                         <a href="#">
                                             <i class="zmdi zmdi-settings"></i>Setting</a>
-                                    </div -->>
+                                    </div -->
                                 </div>
                                 <div class="account-dropdown__footer">
                                     <a href="{{ route('logout') }}" 
