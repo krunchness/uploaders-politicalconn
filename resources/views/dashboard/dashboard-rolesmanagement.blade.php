@@ -73,7 +73,7 @@
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item download-file" data-file="	" data-toggle="tooltip" data-placement="top" title="Download">
+                                <!-- <button class="item download-file" data-file="	" data-toggle="tooltip" data-placement="top" title="Download">
                                     <i class="zmdi zmdi-cloud-download"></i>
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -84,7 +84,7 @@
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                     <i class="zmdi zmdi-more"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </td>
                     </tr>
@@ -102,33 +102,17 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <strong>Upload New Document</strong>
+                <strong>Add New Role</strong>
             </div>
             <div class="card-body card-block">
-                <form action="{{ route('file.upload') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{ route('usermanagement.addRole') }}" method="post" class="form-horizontal">
                     {{ csrf_field() }}
                     <div class="row form-group">
                         <div class="col col-md-3">
-                            <label for="text-input" class=" form-control-label">Document Title</label>
+                            <label for="text-input" class=" form-control-label">Role Name</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="text-input" name="title" placeholder="Text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col col-md-3">
-                            <label for="textarea-input" class=" form-control-label">Description</label>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <textarea name="file_desc" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col col-md-3">
-                            <label for="file-input" class=" form-control-label">File input</label>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <input type="file" id="file-input" name="file_input" class="form-control-file">
+                            <input type="text" id="text-input" name="role" placeholder="Role Name" class="form-control">
                         </div>
                     </div>
                     <div class="card-footer">
